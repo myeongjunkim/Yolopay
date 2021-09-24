@@ -5,5 +5,6 @@ from account.views import *
 
 
 urlpatterns = [
+    
     path('', login, name="login")
 ]
