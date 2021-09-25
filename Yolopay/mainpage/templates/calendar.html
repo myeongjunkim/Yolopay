@@ -114,7 +114,7 @@
                     <strong>오늘의 소비 기록</strong>
                     <br />
                     <ul class="today">
-                        <li id="todayRecord">오늘의 소비를 기록해보세요</li>
+                        <li id="todayRecord" style="overflow: hidden; margin-right: 5px">오늘의 소비를 기록해보세요</li>
                     </ul>
                 </div>
                 <div class="current-events">
@@ -129,6 +129,7 @@
                     <br />
                     <ul class="today">
                         <li id="todayType">오늘 나의 소비 타입은?</li>
+                        <img src="" alt="" id="todayTypeImg" style="width: 50px" />
                     </ul>
                 </div>
                 <!--current-events -->
@@ -257,20 +258,21 @@
         for(var record in records) {
             var temp = records[record];
             if (temp['yolo_fire'] == 'yolo') {
-                console.log(temp['yolo_fire']);
-                console.log(typeof temp['date']);
-                console.log(document.getElementById(temp['date']));
                 document.getElementById(temp['date']).src = "../static/img/yolo.png";
             }
             else {
-                console.log(temp['yolo_fire']);
-                console.log(typeof temp['date']);
                 document.getElementById(temp['date']).src = "../static/img/fire.png";
             }
             if (temp['date'] == todayDate) {
                 document.getElementById('todayRecord').innerHTML = temp['body'];
                 document.getElementById('todayEmotion').innerHTML = temp['emotion'];
-                document.getElementById('todayType').innerHTML = temp['yolo_fire'];
+                if (temp['yolo_fire'] == yolo) {
+                    document.getElementById('todayTypeImg').src = "../static/img/yolo.png";
+                }
+                else {
+                    document.getElementById('todayType').innerHTML = "";
+                    document.getElementById('todayTypeImg').src = "../static/img/fire.png"
+                }
             }
         }
 
