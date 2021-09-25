@@ -28,43 +28,137 @@
                 <!--triangle -->
                 <div class="triangle-right"></div>
                 <!--  triangle -->
-
-                <div class="months">
-                    <span class="month-hover">Jan</span>
-                    <span class="month-hover">Feb</span>
-                    <span class="month-hover">Mar</span>
-                    <span class="month-hover">Apr</span>
-                    <span class="month-hover">May</span>
-                    <span class="month-hover">Jun</span>
-                    <span class="month-hover">July</span>
-                    <span class="month-hover">Aug</span>
-                    <strong class="month-color">Sep</strong>
-                    <span class="month-hover">Oct</span>
-                    <span class="month-hover">Nov</span>
-                    <span class="month-hover">Dec</span>
-                </div>
-                <!-- months -->
-                <hr class="month-line" />
-
-                <div class="days">SUN MON TUE WED THU FRI SAT</div>
-                <!-- days -->
-                <!-- <strong class="white">30</strong> -->
-                <div class="num-dates">
-                    <div class="first-week"><span class="grey">29 30 31 </span> 01 02 03 04</div>
-                    <!-- first week -->
-                    <div class="second-week">05 06 07 08 09 10 11</div>
-                    <!-- week -->
-                    <div class="third-week">12 13 14 15 16 17 18</div>
-                    <!-- week -->
-                    <div class="fourth-week">
-                        19 20 21 22 23 24
-                        <div onclick="dailyModal();" style="display: inline-block">25</div>
+                <div class="calendar-dates">
+                    <div class="months flex">
+                        <span class="month-hover">Jan</span>
+                        <span class="month-hover">Feb</span>
+                        <span class="month-hover">Mar</span>
+                        <span class="month-hover">Apr</span>
+                        <span class="month-hover">May</span>
+                        <span class="month-hover">Jun</span>
+                        <span class="month-hover">July</span>
+                        <span class="month-hover">Aug</span>
+                        <strong class="month-color">Sep</strong>
+                        <span class="month-hover">Oct</span>
+                        <span class="month-hover">Nov</span>
+                        <span class="month-hover">Dec</span>
                     </div>
-                    <!-- week -->
-                    <div class="fifth-week">26 27 28 29 30 <span class="grey">01 02</span></div>
-                    <!-- week -->
-                    <div class="sixth-week"><span class="grey">03 04 05 06 07 08 09</span></div>
-                    <!-- week -->
+                    <!-- months -->
+                    <hr class="month-line" />
+
+                    <div class="days flex">
+                        <ul class="flex" style="width: 100%; margin-right: 20px">
+                            <li>SUN</li>
+                            <li>MON</li>
+                            <li>TUE</li>
+                            <li>WED</li>
+                            <li>THU</li>
+                            <li>FRI</li>
+                            <li>SAT</li>
+                        </ul>
+                    </div>
+                    <!-- days -->
+                    <!-- <strong class="white">30</strong> -->
+                    <div class="num-dates" id="num-dates">
+                        <!-- <div class="first-week"><span class="grey">29 30 31 </span> 01 02 03 04</div> -->
+                        <div class="first-week flex">
+                            <span class="grey" style="width: 43%">
+                                <ul id="first-week-1">
+                                    <!-- <li>
+                                        <span>29</span>
+                                        <img src="{% static 'img/yolo.png' %}" alt="" />
+                                    </li>
+                                    <li>
+                                        <span>30</span>
+                                        <img src="{% static 'img/yolo.png' %}" alt="" />
+                                    </li>
+                                    <li>
+                                        <span>31</span>
+                                        <img src="{% static 'img/yolo.png' %}" alt="" />
+                                    </li> -->
+                                </ul>
+                            </span>
+                            <ul style="width: 57%" id="first-week-2">
+                                <!-- <li><span>01</span> <img src="{% static 'img/yolo.png' %}" alt="" /></li>
+                                <li>
+                                    <span>02</span>
+                                    <img src="{% static 'img/yolo.png' %}" alt="" />
+                                </li>
+                                <li>
+                                    <span>03</span>
+                                    <img src="{% static 'img/yolo.png' %}" alt="" />
+                                </li> -->
+                            </ul>
+                        </div>
+                        <!-- first week -->
+                        <!-- <div class="second-week">05 06 07 08 09 10 11</div> -->
+                        <div class="second-week">
+                            <ul id="second-week">
+                                <!-- <li>05</li>
+                                <li>06</li>
+                                <li>07</li>
+                                <li>08</li>
+                                <li>09</li>
+                                <li>10</li>
+                                <li>11</li> -->
+                            </ul>
+                        </div>
+                        <!-- week -->
+                        <div class="third-week">
+                            <ul id="third-week">
+                                <!-- <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li> -->
+                            </ul>
+                        </div>
+                        <!-- week -->
+                        <div class="fourth-week">
+                            <ul id="fourth-week">
+                                <!-- <li>19</li>
+                                <li>20</li>
+                                <li>21</li>
+                                <li>22</li>
+                                <li>23</li>
+                                <li>24</li>
+                                <li>25</li> -->
+                            </ul>
+                        </div>
+                        <!-- week -->
+                        <div class="fifth-week flex">
+                            <ul id="fifth-week-1" style="width: 71%">
+                                <!-- <li>26</li>
+                                <li>27</li>
+                                <li>28</li>
+                                <li>29</li>
+                                <li>30</li> -->
+                            </ul>
+                            <span class="grey" style="width: 29%">
+                                <ul id="fifth-week-2">
+                                    <!-- <li>01</li>
+                                    <li>02</li> -->
+                                </ul>
+                            </span>
+                        </div>
+                        <!-- week -->
+                        <!-- <div class="sixth-week">
+                            <span class="grey">
+                                <ul id="sixth-week">
+                                    <!-- <li>03</li>
+                                    <li>04</li>
+                                    <li>05</li>
+                                    <li>06</li>
+                                    <li>07</li>
+                                    <li>08</li>
+                                    <li>09</li>
+                                </ul>
+                            </span>
+                        </div> -->
+                        <!-- week -->
+                    </div>
                 </div>
                 <!-- num-dates -->
                 <!-- <div class="event-indicator"></div> -->
@@ -124,6 +218,7 @@
                 <a href="" class="close" onclick="close();"><i class="fas fa-times"></i></a>
                 <form action="" method="POST">
                     <label for="record" class="formTitle">오늘의 소비 기록</label>
+                    <span id="modalDate"></span>
                     <textarea name="record" class="record" id="record" cols="30" rows="10"></textarea>
                     <label for="emotion" class="formTitle">오늘의 감정?</label>
                     <div class="input_container">

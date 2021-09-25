@@ -42,6 +42,7 @@ body {
 
 .container a {
     border: none;
+    text-decoration: none;
     color: white;
     background-color: #2ecc70;
     font-weight: 900;
