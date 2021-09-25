@@ -155,20 +155,25 @@
                     <label for="emotion" class="formTitle">오늘의 감정?</label>
                     <div class="input_container">
                         <input type="radio" name="emotion" value="happy" id="happy" /><label for="happy"><i class="far fa-laugh-beam"></i></label>
-                        <input type="radio" name="emotion" value="soso" /><label for="happy"><i class="far fa-laugh-beam"></i></label>
-                        <input type="radio" name="emotion" value="wow" />
-                        <input type="radio" name="emotion" value="stupid" />
-                        <input type="radio" name="emotion" value="sad" />
-                        <input type="radio" name="emotion" value="annoyed" />
+                        <input type="radio" name="emotion" value="laugh" id="laugh" /><label for="laugh"><i class="far fa-laugh-squint"></i></label>
+                        <input type="radio" name="emotion" value="star" id="star" /><label for="star"><i class="far fa-grin-stars"></i></label>
+                        <input type="radio" name="emotion" value="regret" id="regret"/><label for="regret"><i class="far fa-tired"></i></label>
+                        <input type="radio" name="emotion" value="sad" id="sad" /><label for="sad"><i class="far fa-sad-cry"></i></label>
+                        <input type="radio" name="emotion" value="angry" id="angry" /><label for="angry"><i class="far fa-angry"></i></label>
                     </div>
                     <label for="type" class="formTitle">오늘의 나는?</label>
                     <div class="input_container">
-                        <input type="radio" name="type" value="fire" id="fire" />
-                        <label for="fire"><img src="" alt="" /></label>
-                        <input type="radio" name="type" value="yolo" id="yolo" />
-                        <label for="yolo"><img src="" alt="" /></label>
+                        <div class="radiofire">
+                            <input type="radio" name="type" value="fire" id="fire" />
+                            <label for="fire"><img src="{% static 'img/fire.png' %}" alt="파이어족 이미지" /></label>
+                        </div>
+                        <div class="radioyolo">
+                            <input type="radio" name="type" value="yolo" id="yolo" />
+                            <label for="yolo"><img src="{% static 'img/yolo.png' %}" alt="욜로 이미지" /></label>
+                        </div>
                     </div>
                     <input style="display: none" type="text" name="date" id="date_only" value="0" />
+                        <br>
                     <input type="submit" name="submit" id="submit" value="제출하기" />
                 </form>
             </div>
@@ -181,11 +186,11 @@
                 <h2 class="formTitle">나는 욜로족일까 파이어족일까?</h2>
                 <div class="rate">
                     <div class="yoloRate" id="yoloRate">
-                        <img src="" alt="" />
+                        <img src="{% static 'img/yolo.png' %}" alt="" />
                         <span id="yoloRateText">{{yolo_rate}}%</span>
                     </div>
                     <div class="fireRate" id="fireRate">
-                        <img src="" alt="" />
+                        <img src="{% static 'img/fire.png' %}" alt="" />
                         <span id="fireRateText">{{fire_rate}}%</span>
                     </div>
                 </div>
@@ -196,25 +201,25 @@
                             <i class="far fa-laugh-beam"></i>
                             <span id="totalHappy">1</span>
                         </div>
-                        <div class="happy">
-                            <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                        <div class="laugh">
+                            <i class="far fa-laugh-squint"></i>
+                            <span id="totalLaugh">1</span>
                         </div>
-                        <div class="happy">
-                            <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                        <div class="star">
+                            <i class="far fa-grin-stars"></i>
+                            <span id="totalStar">1</span>
                         </div>
-                        <div class="happy">
-                            <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                        <div class="regret">
+                            <i class="far fa-tired"></i>
+                            <span id="totalRegret">1</span>
                         </div>
-                        <div class="happy">
-                            <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                        <div class="sad">
+                            <i class="far fa-sad-cry"></i>
+                            <span id="totalSad">1</span>
                         </div>
-                        <div class="happy">
-                            <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                        <div class="angry">
+                            <i class="far fa-angry"></i>
+                            <span id="totalAngry">1</span>
                         </div>
                     </div>
                 </div>
@@ -223,7 +228,6 @@
                     <div id="evaluation">
                         지난 시간동안 YOLO로 사셨군요!!<br />
                         괜찮아요~ 다음부터 아끼면 돼죠!<br />
-                        얼른 돈 모아서 경제적 자유를 얻어봅시다!!
                     </div>
                 </div>
             </div>
