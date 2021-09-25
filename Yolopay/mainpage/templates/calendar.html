@@ -172,19 +172,21 @@
                 </form>
             </div>
         </div>
+
+
         <!-- stats modal -->
         <div id="statsModal">
             <div class="modal_container">
                 <a href="" class="close" onclick="close();"><i class="fas fa-times"></i></a>
                 <h2 class="formTitle">나는 욜로족일까 파이어족일까?</h2>
                 <div class="rate">
-                    <div class="yoloRate">
+                    <div class="yoloRate" id="yoloRate">
                         <img src="" alt="" />
-                        <span id="yoloRateText">60%</span>
+                        <span id="yoloRateText">{{yolo_rate}}%</span>
                     </div>
-                    <div class="fireRate">
+                    <div class="fireRate" id="fireRate">
                         <img src="" alt="" />
-                        <span id="fireRateText">40%</span>
+                        <span id="fireRateText">{{fire_rate}}%</span>
                     </div>
                 </div>
                 <h2 class="formTitle">지난 소비에 대한 나의 감정</h2>

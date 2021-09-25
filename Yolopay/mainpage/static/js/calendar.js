@@ -50,6 +50,13 @@ function statsModal() {
     console.log('st');
     document.getElementById('bg').style.display = 'block';
     document.getElementById('statsModal').style.display = 'block';
+
+    const yolo_rate = document.getElementById('yoloRateText').innerHTML;
+    const fire_rate = document.getElementById('fireRateText').innerHTML;
+    console.log(yolo_rate)
+    document.getElementById('yoloRate').style.width = yolo_rate;
+    document.getElementById('fireRate').style.width = fire_rate;
+    
 }
 
 function dailyModal(date) {
