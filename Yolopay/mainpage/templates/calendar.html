@@ -63,100 +63,30 @@
                         <!-- <div class="first-week"><span class="grey">29 30 31 </span> 01 02 03 04</div> -->
                         <div class="first-week flex">
                             <span class="grey" style="width: 43%">
-                                <ul id="first-week-1">
-                                    <!-- <li>
-                                        <span>29</span>
-                                        <img src="{% static 'img/yolo.png' %}" alt="" />
-                                    </li>
-                                    <li>
-                                        <span>30</span>
-                                        <img src="{% static 'img/yolo.png' %}" alt="" />
-                                    </li>
-                                    <li>
-                                        <span>31</span>
-                                        <img src="{% static 'img/yolo.png' %}" alt="" />
-                                    </li> -->
-                                </ul>
+                                <ul id="first-week-1"></ul>
                             </span>
-                            <ul style="width: 57%" id="first-week-2">
-                                <!-- <li><span>01</span> <img src="{% static 'img/yolo.png' %}" alt="" /></li>
-                                <li>
-                                    <span>02</span>
-                                    <img src="{% static 'img/yolo.png' %}" alt="" />
-                                </li>
-                                <li>
-                                    <span>03</span>
-                                    <img src="{% static 'img/yolo.png' %}" alt="" />
-                                </li> -->
-                            </ul>
+                            <ul style="width: 57%" id="first-week-2"></ul>
                         </div>
                         <!-- first week -->
                         <!-- <div class="second-week">05 06 07 08 09 10 11</div> -->
                         <div class="second-week">
-                            <ul id="second-week">
-                                <!-- <li>05</li>
-                                <li>06</li>
-                                <li>07</li>
-                                <li>08</li>
-                                <li>09</li>
-                                <li>10</li>
-                                <li>11</li> -->
-                            </ul>
+                            <ul id="second-week"></ul>
                         </div>
                         <!-- week -->
                         <div class="third-week">
-                            <ul id="third-week">
-                                <!-- <li>12</li>
-                                <li>13</li>
-                                <li>14</li>
-                                <li>15</li>
-                                <li>16</li>
-                                <li>17</li>
-                                <li>18</li> -->
-                            </ul>
+                            <ul id="third-week"></ul>
                         </div>
                         <!-- week -->
                         <div class="fourth-week">
-                            <ul id="fourth-week">
-                                <!-- <li>19</li>
-                                <li>20</li>
-                                <li>21</li>
-                                <li>22</li>
-                                <li>23</li>
-                                <li>24</li>
-                                <li>25</li> -->
-                            </ul>
+                            <ul id="fourth-week"></ul>
                         </div>
                         <!-- week -->
                         <div class="fifth-week flex">
-                            <ul id="fifth-week-1" style="width: 71%">
-                                <!-- <li>26</li>
-                                <li>27</li>
-                                <li>28</li>
-                                <li>29</li>
-                                <li>30</li> -->
-                            </ul>
+                            <ul id="fifth-week-1" style="width: 71%"></ul>
                             <span class="grey" style="width: 29%">
-                                <ul id="fifth-week-2">
-                                    <!-- <li>01</li>
-                                    <li>02</li> -->
-                                </ul>
+                                <ul id="fifth-week-2"></ul>
                             </span>
                         </div>
-                        <!-- week -->
-                        <!-- <div class="sixth-week">
-                            <span class="grey">
-                                <ul id="sixth-week">
-                                    <!-- <li>03</li>
-                                    <li>04</li>
-                                    <li>05</li>
-                                    <li>06</li>
-                                    <li>07</li>
-                                    <li>08</li>
-                                    <li>09</li>
-                                </ul>
-                            </span>
-                        </div> -->
                         <!-- week -->
                     </div>
                 </div>
@@ -183,22 +113,22 @@
                 <div class="current-events">
                     오늘의 소비 기록
                     <br />
-                    <ul>
-                        <li>Day 09 Daily CSS Image</li>
+                    <ul class="today">
+                        <li id="todayRecord">Day 09 Daily CSS Image</li>
                     </ul>
                 </div>
                 <div class="current-events">
                     오늘의 감정?
                     <br />
-                    <ul>
-                        <li>Day 09 Daily CSS Image</li>
+                    <ul class="today">
+                        <li id="todayEmotion">Day 09 Daily CSS Image</li>
                     </ul>
                 </div>
                 <div class="current-events">
                     오늘의 나는?
                     <br />
-                    <ul>
-                        <li>Day 09 Daily CSS Image</li>
+                    <ul class="today">
+                        <li id="todayType">Day 09 Daily CSS Image</li>
                     </ul>
                 </div>
                 <!--current-events -->
@@ -219,8 +149,8 @@
                 <a href="" class="close" onclick="close();"><i class="fas fa-times"></i></a>
                 <form action="{% url 'create' %}" method="POST">
                     {%csrf_token%}
-                    <label for="record" class="formTitle">오늘의 소비 기록</label>
-                    <span id="modalDate"></span>
+                    <div><span id="modalDate" class="formTitle"></span><span style="font-size: 20px; font-weight: bold">일</span></div>
+                    <label for="record" class="formTitle" style="display: inline">오늘의 소비 기록</label>
                     <textarea name="record" class="record" id="record" cols="30" rows="10"></textarea>
                     <label for="emotion" class="formTitle">오늘의 감정?</label>
                     <div class="input_container">

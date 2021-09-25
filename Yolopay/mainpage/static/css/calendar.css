@@ -155,13 +155,13 @@ textarea:focus {
 }
 
 .active-day {
-    width: 35px;
-    height: 35px;
+    /* width: 35px;
+    height: 35px; */
     border-radius: 50%;
     background-color: #2ecc71;
-    position: relative;
+    /* position: relative;
     top: 295px;
-    left: 661px;
+    left: 661px; */
 }
 
 .white {
@@ -253,6 +253,11 @@ textarea:focus {
     position: relative;
     margin-left: 25px;
     bottom: 30px;
+}
+
+.today {
+    display: block;
+    margin-bottom: 20px;
 }
 
 .posts {
@@ -439,7 +444,7 @@ textarea:focus {
 
 li img {
     width: 25px;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 ul li {
