@@ -8,7 +8,11 @@ def main(request):
 
 def calendar(request):
     records = Yolopay.objects.all()
-    return render(request, 'calendar.html', {'records':records})
+    yolo_cnt = Yolopay.objects.filter(yolo_fire="yolo")
+    fire_cnt = Yolopay.objects.filter(yolo_fire="fire")
+    yolo_rate= round(len(yolo_cnt)/len(records),2)*100
+    fire_rate= round(len(fire_cnt)/len(records),2)*100
+    return render(request, 'calendar.html', {'records':records, 'yolo_rate':yolo_rate, 'fire_rate':fire_rate})
 
 def create(request):
     new_record = Yolopay()
