@@ -5,5 +5,6 @@ from mainpage.views import *
 
 
 urlpatterns = [
-    path('', mainpage, name="mainpage")
+    path('', main, name="main"),
+    path('calendar/', calendar, name="calendar"),
 ]

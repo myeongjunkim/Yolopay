@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&family=Nanum+Gothic&display=swap" rel="stylesheet" />
+        <title>YOLOPAY</title>
+    </head>
+    <body>
+        <div class="header flex">
+            <a href="{% url 'main' %}" class="logo">YOLOPAY</a>
+        </div>
+        <div class="container flex">
+            <div>
+                <h2>욜로 VS 파이어족</h2>
+                <p>
+                    내가 어떤 소비생활을 했을지 평가해보자!<br />
+                    과연 오늘 나는 욜로였을까? 파이어족이었을까?<br />
+                    나의 매일의 소비생활을 평가해보자!<br />
+                    플렉스한 하루인 욜로! 미래의 나를 위해 저축하는 파이어족!
+                </p>
+                <a href="{% url 'signin' %}">지금 시작하기 </a>
+            </div>
+            <div class="container_Img">
+                <img src="../static/img/main.png" alt="" />
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>
