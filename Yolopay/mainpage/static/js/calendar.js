@@ -63,6 +63,7 @@ function dailyModal(date) {
     document.getElementById('bg').style.display = 'block';
     document.getElementById('dailyModal').style.display = 'block';
     document.getElementById('modalDate').innerHTML = date;
+    document.getElementById('date_only').value = date;
 }
 
 function close() {
