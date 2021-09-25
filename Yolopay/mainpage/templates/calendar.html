@@ -173,7 +173,6 @@
             </div>
         </div>
 
-
         <!-- stats modal -->
         <div id="statsModal">
             <div class="modal_container">
@@ -230,3 +229,31 @@
         </div>
     </body>
 </html>
+
+<script>
+    var records = [
+        {% for record in records %}
+            {
+                seq : "{{ record.seq }}",
+                body : "{{ record.body }}",
+                emotion : "{{ record.emotion }}",
+                yolo_fire : "{{ record.yolo_fire }}",
+                date : "{{ record.date }}"
+            },
+        {% endfor %}
+    ]
+
+    console.log(records);
+
+    for(var record in records) {
+        var temp = records[record];
+        if (temp['yolo_fire'] = 'yolo') {
+            console.log(temp['yolo_fire']);
+            document.getElementById(temp['date']).src = "../static/img/yolo.png";
+        }
+        else {
+            console.log(temp['yolo_fire']);
+            document.getElementById(temp['date']).src = "../static/img/fire.png";
+        }
+    }
+</script>
