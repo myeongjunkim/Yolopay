@@ -111,24 +111,24 @@
                 <div class="day" id="day"></div>
                 <!--day -->
                 <div class="current-events">
-                    오늘의 소비 기록
+                    <strong>오늘의 소비 기록</strong>
                     <br />
                     <ul class="today">
-                        <li id="todayRecord">Day 09 Daily CSS Image</li>
+                        <li id="todayRecord">오늘의 소비를 기록해보세요</li>
                     </ul>
                 </div>
                 <div class="current-events">
-                    오늘의 감정?
+                    <strong>오늘의 감정?</strong>
                     <br />
                     <ul class="today">
-                        <li id="todayEmotion">Day 09 Daily CSS Image</li>
+                        <li id="todayEmotion">오늘 나의 소비 감정은?</li>
                     </ul>
                 </div>
                 <div class="current-events">
-                    오늘의 나는?
+                    <strong>오늘의 나는?</strong>
                     <br />
                     <ul class="today">
-                        <li id="todayType">Day 09 Daily CSS Image</li>
+                        <li id="todayType">오늘 나의 소비 타입은?</li>
                     </ul>
                 </div>
                 <!--current-events -->
@@ -168,7 +168,7 @@
                         <input type="radio" name="type" value="yolo" id="yolo" />
                         <label for="yolo"><img src="" alt="" /></label>
                     </div>
-                    <input style="display:none" type="text" name="date" id="date_only" value="0">
+                    <input style="display: none" type="text" name="date" id="date_only" value="0" />
                     <input type="submit" name="submit" id="submit" value="제출하기" />
                 </form>
             </div>
@@ -232,29 +232,43 @@
 </html>
 
 <script>
-    var records = [
-        {% for record in records %}
-            {
-                seq : "{{ record.seq }}",
-                body : "{{ record.body }}",
-                emotion : "{{ record.emotion }}",
-                yolo_fire : "{{ record.yolo_fire }}",
-                date : "{{ record.date }}"
-            },
-        {% endfor %}
-    ]
+    window.onload = function(){
+        var records = [
+            {% for record in records %}
+                {
+                    seq : "{{ record.seq }}",
+                    body : "{{ record.body }}",
+                    emotion : "{{ record.emotion }}",
+                    yolo_fire : "{{ record.yolo_fire }}",
+                    date : "{{ record.date }}"
+                },
+            {% endfor %}
+        ]
 
-    console.log(records);
+        let now = new Date();
+        let todayDate = now.getDate();
 
-    for(var record in records) {
-        var temp = records[record];
-        if (temp['yolo_fire'] = 'yolo') {
-            console.log(temp['yolo_fire']);
-            document.getElementById(temp['date']).src = "../static/img/yolo.png";
+        console.log(records);
+
+        for(var record in records) {
+            var temp = records[record];
+            if (temp['yolo_fire'] == 'yolo') {
+                console.log(temp['yolo_fire']);
+                console.log(typeof temp['date']);
+                console.log(document.getElementById(temp['date']));
+                document.getElementById(temp['date']).src = "../static/img/yolo.png";
+            }
+            else {
+                console.log(temp['yolo_fire']);
+                console.log(typeof temp['date']);
+                document.getElementById(temp['date']).src = "../static/img/fire.png";
+            }
+            if (temp['date'] == todayDate) {
+                document.getElementById('todayRecord').innerHTML = temp['body'];
+                document.getElementById('todayEmotion').innerHTML = temp['emotion'];
+                document.getElementById('todayType').innerHTML = temp['yolo_fire'];
+            }
         }
-        else {
-            console.log(temp['yolo_fire']);
-            document.getElementById(temp['date']).src = "../static/img/fire.png";
-        }
+
     }
 </script>

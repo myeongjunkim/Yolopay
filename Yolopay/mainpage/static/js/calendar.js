@@ -11,39 +11,39 @@ window.addEventListener('DOMContentLoaded', function () {
 
     for (i; i < 32; i++) {
         var result = '';
-        result = '<li><span>' + i + "</span><img src='' id=" + i + "alt='' /></li>";
+        result = '<li><span>' + i + "</span><img src='../static/img/null.png' id=" + i + "alt='' /></li>";
         document.getElementById('first-week-1').innerHTML += result;
     }
     i = 1;
     for (i; i < 31; i++) {
         if (i <= 4) {
-            result = "<li onclick='dailyModal(" + i + ");'><span>0" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>0" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('first-week-2').innerHTML += result;
         } else if (i >= 5 && i <= 9) {
-            result = "<li onclick='dailyModal(" + i + ");'><span>0" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>0" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('second-week').innerHTML += result;
         } else if (i >= 10 && i <= 11) {
-            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('second-week').innerHTML += result;
         } else if (i >= 12 && i <= 18) {
-            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('third-week').innerHTML += result;
         } else if (i >= 19 && i <= 25) {
-            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('fourth-week').innerHTML += result;
         } else {
-            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/yolo.png' id=" + i + " alt='' /></li>";
+            result = "<li onclick='dailyModal(" + i + ");'><span>" + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('fifth-week-1').innerHTML += result;
         }
     }
     i = 1;
     for (i; i < 3; i++) {
         if (i <= 2) {
-            result = '<li><span>0' + i + "</span><img src='' id=" + i + " alt='' /></li>";
+            result = '<li><span>0' + i + "</span><img src='../static/img/null.png' id=" + i + " alt='' /></li>";
             document.getElementById('fifth-week-2').innerHTML += result;
         }
     }
-    document.getElementById(date).className = 'active-day';
+    // document.getElementById(date).className = 'active-day';
 });
 
 function statsModal() {
@@ -53,10 +53,9 @@ function statsModal() {
 
     const yolo_rate = document.getElementById('yoloRateText').innerHTML;
     const fire_rate = document.getElementById('fireRateText').innerHTML;
-    console.log(yolo_rate)
+    console.log(yolo_rate);
     document.getElementById('yoloRate').style.width = yolo_rate;
     document.getElementById('fireRate').style.width = fire_rate;
-    
 }
 
 function dailyModal(date) {
