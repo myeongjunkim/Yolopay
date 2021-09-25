@@ -122,17 +122,18 @@
         <div id="dailyModal">
             <div class="modal_container">
                 <a href="" class="close" onclick="close();"><i class="fas fa-times"></i></a>
-                <form action="" method="POST">
+                <form action="{% url 'create' %}" method="POST">
+                    {%csrf_token%}
                     <label for="record" class="formTitle">오늘의 소비 기록</label>
                     <textarea name="record" class="record" id="record" cols="30" rows="10"></textarea>
                     <label for="emotion" class="formTitle">오늘의 감정?</label>
                     <div class="input_container">
                         <input type="radio" name="emotion" value="happy" id="happy" /><label for="happy"><i class="far fa-laugh-beam"></i></label>
-                        <input type="radio" name="emotion" value="happy" /><label for="happy"><i class="far fa-laugh-beam"></i></label>
-                        <input type="radio" name="emotion" value="happy" />
-                        <input type="radio" name="emotion" value="happy" />
-                        <input type="radio" name="emotion" value="happy" />
-                        <input type="radio" name="emotion" value="happy" />
+                        <input type="radio" name="emotion" value="soso" /><label for="happy"><i class="far fa-laugh-beam"></i></label>
+                        <input type="radio" name="emotion" value="wow" />
+                        <input type="radio" name="emotion" value="stupid" />
+                        <input type="radio" name="emotion" value="sad" />
+                        <input type="radio" name="emotion" value="annoyed" />
                     </div>
                     <label for="type" class="formTitle">오늘의 나는?</label>
                     <div class="input_container">

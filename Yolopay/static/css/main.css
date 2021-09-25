@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background-color: #d4f6db;
+}
+
+.logo {
+    font-family: 'Righteous', cursive;
+    text-decoration: none;
+    margin: auto 60px;
+    color: #000000;
+    font-size: 40px;
+}
+
+.container {
+    margin: 100px auto;
+    width: 1500px;
+    justify-content: center;
+}
+
+.container h2 {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.container p {
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+
+.container a {
+    border: none;
+    color: white;
+    background-color: #2ecc70;
+    font-weight: 900;
+    font-size: 22px;
+    padding: 8px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.container_Img {
+    width: 45%;
+}
+
+.container_Img img {
+    padding-left: 50px;
+    width: 100%;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background: rgba(229, 229, 229, 0.25);
+}
