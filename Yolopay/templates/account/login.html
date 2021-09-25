@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet" />
+        <title>YOLOPAY</title>
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="signIn_container flex">
+            <a class="logo" href="{% url 'main' %}">YOLOPAY</a>
+            <p class="title">로그인</p>
+            <form action="{% url 'account_login' %}" method="post" class="signIn_Form flex">
+                {% csrf_token %} 
+                <input type="text" name="login" autocomplete="username" required="" id="id_login" class="signIn_Input" placeholder="id">
+                <input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="signIn_Input" placeholder="password">
+                <input type="submit" id="signIn_Button" value="로그인" />
+            </form>
+            <div class="join flex">
+                <p>아직 회원이 아니신가요?</p>
+                <a href="{% url 'account_signup' %}" class="joinButton">회원 가입하기</a>
+            </div>
+        </div>
+    </body>
+</html>
