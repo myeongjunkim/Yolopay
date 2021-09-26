@@ -204,35 +204,43 @@
                     <div class="emotionStats">
                         <div class="happy">
                             <i class="far fa-laugh-beam"></i>
-                            <span id="totalHappy">1</span>
+                            <span id="totalHappy">{{emotion.h}}</span>
                         </div>
                         <div class="laugh">
                             <i class="far fa-laugh-squint"></i>
-                            <span id="totalLaugh">1</span>
+                            <span id="totalLaugh">{{emotion.la}}</span>
                         </div>
                         <div class="star">
                             <i class="far fa-grin-stars"></i>
-                            <span id="totalStar">1</span>
+                            <span id="totalStar">{{emotion.st}}</span>
                         </div>
                         <div class="regret">
                             <i class="far fa-tired"></i>
-                            <span id="totalRegret">1</span>
+                            <span id="totalRegret">{{emotion.r}}</span>
                         </div>
                         <div class="sad">
                             <i class="far fa-sad-cry"></i>
-                            <span id="totalSad">1</span>
+                            <span id="totalSad">{{emotion.sa}}</span>
                         </div>
                         <div class="angry">
                             <i class="far fa-angry"></i>
-                            <span id="totalAngry">1</span>
+                            <span id="totalAngry">{{emotion.a}}</span>
                         </div>
                     </div>
                 </div>
                 <h2 class="formTitle">YOLOPAY의 평가</h2>
                 <div class="input_container">
                     <div id="evaluation">
-                        지난 시간동안 YOLO로 사셨군요!!<br />
-                        괜찮아요~ 다음부터 아끼면 돼죠!<br />
+                        {% if yolo_rate > fire_rate %}
+                            지난 시간동안 YOLO로 사셨군요!!<br />
+                            괜찮아요~ 다음부터 아끼면 돼죠!<br />
+                        {% elif yolo_rate == fire_rate%}
+                            오호 동점!!!<br />
+                            욜로족?? 파이어족?? 지켜봅시다:)<br />
+                        {% else %}
+                            이번달의 당신은 FIRE족!!<br />
+                            정말 40살에 은퇴하실 생각인가요?!ㅎㅎㅎㅎ<br />
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -282,6 +290,8 @@
                 document.getElementById('positionChange').style.margin='flex';
                 document.getElementById('positionChange_').style.height='120px';
                 
+
+
                 if (temp['yolo_fire'] == 'yolo') {
                     document.getElementById('todayType').innerHTML = "";
                     document.getElementById('todayTypeImg').src = "../static/img/yolo.png";

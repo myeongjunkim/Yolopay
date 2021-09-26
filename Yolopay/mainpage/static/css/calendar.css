@@ -124,6 +124,10 @@ textarea:focus {
     top: 65px;
 }
 
+.num-dates li{
+    cursor:pointer;
+}
+
 .first-week {
     margin-bottom: 14px;
     word-spacing: 55px;
@@ -213,6 +217,8 @@ textarea:focus {
     font-size: 15px;
     font-weight: bold;
     padding: 5px 10px;
+    margin-right:10px;
+    cursor: pointer;
 }
 
 /* .burger-line:hover,
@@ -228,9 +234,7 @@ textarea:focus {
     margin-bottom: 3px;
 }
 
-.statsButton {
-    cursor: pointer;
-}
+
 
 .num-date {
     font-size: 150px;
