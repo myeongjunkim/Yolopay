@@ -43,7 +43,8 @@ window.addEventListener('DOMContentLoaded', function () {
             document.getElementById('fifth-week-2').innerHTML += result;
         }
     }
-    // document.getElementById(date).className = 'active-day';
+    console.log(date)
+    document.getElementById(date).className = 'active-day';
 });
 
 function statsModal() {

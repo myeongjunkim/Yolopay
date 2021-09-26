@@ -154,15 +154,15 @@ textarea:focus {
     word-spacing: 55px;
 }
 
-.active-day {
+/* .active-day span {
     /* width: 35px;
     height: 35px; */
-    border-radius: 50%;
-    background-color: #2ecc71;
+    /* border-radius: 50%; */
+    /* background-color: #2ecc71; */
     /* position: relative;
     top: 295px;
     left: 661px; */
-}
+} */
 
 .white {
     color: white;
@@ -439,8 +439,9 @@ textarea:focus {
 }
 
 .yoloRate img {
-    width: 25px;
-    padding-left: 10px;
+    width: 30px;
+    padding-left: 10px;;
+    padding-right: 10px
 }
 
 .fireRate {
@@ -456,7 +457,18 @@ textarea:focus {
 
 .fireRate img {
     width: 30px;
+    padding-left: 10px;;
+    padding-right: 10px;
 }
+
+.yoloRate *{
+    vertical-align: middle;
+}
+
+.fireRate *{
+    vertical-align: middle;
+}
+
 
 .emotionStats {
     display: flex;
@@ -482,4 +494,13 @@ li img {
 ul li {
     display: flex;
     flex-direction: column;
+}
+
+#todayEmotion_emo{
+    padding-top:10px;
+    padding-left:20px;
+}
+
+#todayEmotion_emo *{
+    font-size: 40px;
 }

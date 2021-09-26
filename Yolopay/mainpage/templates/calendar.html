@@ -110,28 +110,32 @@
                 <!--num-date -->
                 <div class="day" id="day"></div>
                 <!--day -->
-                <div class="current-events">
+                <div class="current-events" id="positionChange_">
                     <strong>오늘의 소비 기록</strong>
                     <br />
                     <ul class="today">
                         <li id="todayRecord" style="overflow: hidden; margin-right: 5px">오늘의 소비를 기록해보세요</li>
                     </ul>
                 </div>
-                <div class="current-events">
-                    <strong>오늘의 감정?</strong>
-                    <br />
-                    <ul class="today">
-                        <li id="todayEmotion">오늘 나의 소비 감정은?</li>
-                    </ul>
+                <div id="positionChange">
+                    <div class="current-events">
+                        <strong>오늘의 감정?</strong>
+                        <br />
+                        <ul class="today">
+                            <li id="todayEmotion">오늘 나의 소비 감정은?</li>
+                            <div id="todayEmotion_emo"></div>
+                        </ul>
+                    </div>
+                    <div class="current-events">
+                        <strong>오늘의 나는?</strong>
+                        <br />
+                        <ul class="today">
+                            <li id="todayType">오늘 나의 소비 타입은?</li>
+                            <div style="margin-left:20px;"><img src="" alt="" id="todayTypeImg" style="width: 50px" /></div>
+                        </ul>
+                    </div>
                 </div>
-                <div class="current-events">
-                    <strong>오늘의 나는?</strong>
-                    <br />
-                    <ul class="today">
-                        <li id="todayType">오늘 나의 소비 타입은?</li>
-                        <img src="" alt="" id="todayTypeImg" style="width: 50px" />
-                    </ul>
-                </div>
+
                 <!--current-events -->
 
                 <!-- <div class="create-event">Create an Event</div> -->
@@ -191,12 +195,12 @@
                         <span id="yoloRateText">{{yolo_rate}}%</span>
                     </div>
                     <div class="fireRate" id="fireRate">
-                        <img src="{% static 'img/fire.png' %}" alt="" />
                         <span id="fireRateText">{{fire_rate}}%</span>
+                        <img src="{% static 'img/fire.png' %}" alt="" />
                     </div>
                 </div>
                 <h2 class="formTitle">지난 소비에 대한 나의 감정</h2>
-                <div class="input_container" style="margin-bottom: 50px">
+                <div class="input_container" style="margin-bottom: 30px">
                     <div class="emotionStats">
                         <div class="happy">
                             <i class="far fa-laugh-beam"></i>
@@ -252,7 +256,14 @@
 
         let now = new Date();
         let todayDate = now.getDate();
-
+        let emotion_html = {
+            "happy": `<i class="far fa-laugh-beam"></i>`,
+            "laugh":`<i class="far fa-laugh-squint"></i>`,
+            "star": `<i class="far fa-grin-stars"></i>`,
+            "regret": `<i class="far fa-tired"></i>`,
+            "sad": `<i class="far fa-sad-cry"></i>`,
+            "angry": `<i class="far fa-angry"></i>`
+        }
         console.log(records);
 
         for(var record in records) {
@@ -265,8 +276,14 @@
             }
             if (temp['date'] == todayDate) {
                 document.getElementById('todayRecord').innerHTML = temp['body'];
-                document.getElementById('todayEmotion').innerHTML = temp['emotion'];
-                if (temp['yolo_fire'] == yolo) {
+                document.getElementById('todayEmotion').innerHTML = "";
+                document.getElementById('todayEmotion_emo').innerHTML = emotion_html[temp['emotion']];
+                document.getElementById('positionChange').style.display='flex';
+                document.getElementById('positionChange').style.margin='flex';
+                document.getElementById('positionChange_').style.height='120px';
+                
+                if (temp['yolo_fire'] == 'yolo') {
+                    document.getElementById('todayType').innerHTML = "";
                     document.getElementById('todayTypeImg').src = "../static/img/yolo.png";
                 }
                 else {
