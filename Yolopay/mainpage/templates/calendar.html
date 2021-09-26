@@ -19,6 +19,11 @@
         <title>YOLOPAY</title>
     </head>
     <body>
+        {% if user.is_superuser %}
+        <div class="title">{{user}}님의 캘린더</div>
+        {% else %}
+        <div class="title">{{user.name}}님의 캘린더</div>
+        {% endif %}
         <div class="container">
             <div class="calendar-base">
                 <div class="year">2021</div>

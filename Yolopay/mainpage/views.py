@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import Yolopay
-
+from accounts.models import UserProfile
 # Create your views here.
 def main(request):
     return render(request, 'main.html')
 
 def calendar(request):
+    if not request.user.is_superuser:
+        user = UserProfile.objects.filter(user = request.user)
+        user = user.get()
+    else:
+        user = request.user
     records = Yolopay.objects.all()
     if Yolopay.objects.filter(yolo_fire="yolo"):
         yolo_cnt = Yolopay.objects.filter(yolo_fire="yolo")
@@ -19,7 +24,7 @@ def calendar(request):
         fire_rate= round(len(fire_cnt)/len(records),2)*100
     else:
         fire_rate=0
-    return render(request, 'calendar.html', {'records':records, 'yolo_rate':yolo_rate,'fire_rate':fire_rate})
+    return render(request, 'calendar.html', {'user':user,'records':records, 'yolo_rate':yolo_rate,'fire_rate':fire_rate})
 
 def create(request):
     new_record = Yolopay()
