@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 body {
     width: 100vw;
     overflow: hidden;
@@ -5,7 +6,12 @@ body {
     background-color: #d4f6db;
     font-family: 'Kanit', sans-serif;
 }
-
+.title {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
 ul {
     list-style: none;
     display: flex;
@@ -26,7 +32,7 @@ textarea:focus {
 .container {
     width: 900px;
     height: 500px;
-    margin: 100px auto;
+    margin: 80px auto;
 }
 
 .calendar-base {
