@@ -6,6 +6,15 @@ from accounts.models import UserProfile
 def main(request):
     return render(request, 'main.html')
 
+def emotion_cal():
+    happy_cnt=len(Yolopay.objects.filter(emotion="happy"))
+    laugh_cnt=len(Yolopay.objects.filter(emotion="laugh"))
+    star_cnt=len(Yolopay.objects.filter(emotion="star"))
+    regret_cnt=len(Yolopay.objects.filter(emotion="regret"))
+    sad_cnt=len(Yolopay.objects.filter(emotion="sad"))
+    angry_cnt=len(Yolopay.objects.filter(emotion="angry"))
+    return {"h":happy_cnt, "la":laugh_cnt, "st":star_cnt, "r":regret_cnt, "sa":sad_cnt, "a":angry_cnt}
+    
 def calendar(request):
     if not request.user.is_superuser:
         user = UserProfile.objects.filter(user = request.user)
@@ -24,7 +33,12 @@ def calendar(request):
         fire_rate= round(len(fire_cnt)/len(records),2)*100
     else:
         fire_rate=0
-    return render(request, 'calendar.html', {'user':user,'records':records, 'yolo_rate':yolo_rate,'fire_rate':fire_rate})
+
+
+    emotion_dic = emotion_cal()
+
+    return render(request, 'calendar.html', {'user':user,'records':records, 'yolo_rate':yolo_rate,'fire_rate':fire_rate, 'emotion':emotion_dic})
+
 
 def create(request):
     new_record = Yolopay()
