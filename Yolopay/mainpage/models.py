@@ -9,5 +9,5 @@ class Yolopay(models.Model):
     date = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.body[:10]
+        return self.date
     
